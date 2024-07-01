@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Matching Game Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('image/jungle.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #3f704d;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #3f704d;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .animal-button {
+            width: 100px; /* Adjust width as needed */
+            height: 100px; /* Adjust height as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .animal-button:hover {
+            background-color: #45a049;
+        }
+
+        #mute-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #mute-button:hover {
+            background-color: #45a049;
+        }
+
+        #home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+            background-image: url('image/home.png'); /* Set your home button image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="image/jungle-6432.mp3" loop autoplay></audio>
+    <button id="mute-button" onclick="toggleMute()">Mute</button>
+    <a href="index.html" id="home-button"></a>
+    
+    <div class="container">
+        <h1>𝐀𝐧𝐢𝐦𝐚𝐥 𝐊𝐢𝐧𝐠𝐝𝐨𝐦 </h1>
+        <p>𝗖𝗵𝗼𝗼𝘀𝗲 𝗮 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝘆 𝘁𝗼 𝗣𝗹𝗮𝘆 !</p>
+        
+        <div class="button-container">
+            <a href="game.html" class="animal-button" style="background-image: url('image/mammals.png');"></a>
+            <a href="fish.html" class="animal-button" style="background-image: url('image/bird.webp');"></a>
+			<a href="reptiles.html" class="animal-button" style="background-image: url('image/reptiles.png');"></a>
+			<a href="amphibians.html" class="animal-button" style="background-image: url('image/amphibians.png');"></a>
+			<a href="birds.html" class="animal-button" style="background-image: url('image/bird.jpeg');"></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMute() {
+            var audio = document.getElementById('background-music');
+            var muteButton = document.getElementById('mute-button');
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Matching Game Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('image/jungle.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .start-button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+        }
+
+        #mute-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #mute-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="image/jungle-6432.mp3" loop autoplay></audio>
+    <button id="mute-button" onclick="toggleMute()">Mute</button>
+    <div class="container">
+        <h1>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐀𝐧𝐢𝐦𝐚𝐥 𝐊𝐢𝐧𝐠𝐝𝐨𝐦 !</h1><br>
+        <a href="main.html" class="start-button">𝖲𝗍𝖺𝗋𝗍 𝖦𝖺𝗆𝖾</a><br>
+        <br><br><a href="howtoplay.html" class="start-button">𝖧𝗈𝗐 𝗍𝗈 𝖯𝗅𝖺𝗒</a>
+    </div>
+
+    <script>
+        function toggleMute() {
+            var audio = document.getElementById('background-music');
+            var muteButton = document.getElementById('mute-button');
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

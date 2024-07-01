@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('image/jungle.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .instructions {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 600px;
+            width: 80%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            text-align: left;
+            margin-left: 20px;
+            color: #333;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .start-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+        }
+
+        #mute-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #mute-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="image/jungle-6432.mp3" loop autoplay></audio>
+    <button id="mute-button" onclick="toggleMute()">Mute</button>
+    <div class="instructions">
+        <h1>How to Play</h1>
+        <p>Welcome to the Animal Matching Game! To play:</p>
+        <ul>
+            <li>Choose one animal category you want to play</li>
+			<li>Click on any card to flip it and reveal an animal.</li>
+            <li>Click on another card to find its matching animal.</li>
+            <li>If the animals on both cards match, they will stay flipped.</li>
+            <li>If the animals do not match, both cards will flip back after a short delay.</li>
+            <li>Your goal is to match all the animals on the board.</li>
+        </ul>
+        <p>Have fun exploring the animal kingdom!</p>
+        <a href="index.html" class="start-button">Back to Home</a>
+    </div>
+
+    <script>
+        function toggleMute() {
+            var audio = document.getElementById('background-music');
+            var muteButton = document.getElementById('mute-button');
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
